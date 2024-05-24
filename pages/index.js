@@ -1,4 +1,4 @@
-import ArtPieces from "@/components/ArtPieces";
+import ArtPieces from "@/components/ArtPieces/ArtPieces.jsx";
 import useSWR from "swr";
 
 const URL = "https://example-apis.vercel.app/api/art";

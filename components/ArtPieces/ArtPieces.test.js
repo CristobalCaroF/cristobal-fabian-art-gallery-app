@@ -36,9 +36,3 @@ test("renders a list", () => {
   const ul = screen.getByRole("list");
   expect(ul).toBeInTheDocument();
 });
-
-// test("renders a fallback message if form is not yet submitted", () => {
-//   render(<FahrenheitConverter />);
-//   const message = screen.getByText(/please enter a celsius value and submit/i);
-//   expect(message).toBeInTheDocument();
-// });
