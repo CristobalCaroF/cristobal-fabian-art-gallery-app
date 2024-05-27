@@ -13,3 +13,9 @@ test("renders the navigation link pieces", () => {
   const link = screen.getByText("Pieces");
   expect(link.href).toContain("/art-pieces");
 });
+
+test("renders the navigation link favorites", () => {
+  render(<Link href="/Favorites">Favorites</Link>);
+  const link = screen.getByText("Favorites");
+  expect(link.href).toContain("/Favorites");
+});
