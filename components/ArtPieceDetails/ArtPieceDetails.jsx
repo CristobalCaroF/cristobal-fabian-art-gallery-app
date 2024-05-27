@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 
 export default function ArtPieceDetails({ pieces }) {
   console.log("piecesData: ", pieces);
-  console.log("we are here");
   const router = useRouter();
   const { slug } = router.query;
   const piece = pieces.find((piece) => piece.slug === slug);
