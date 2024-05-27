@@ -15,6 +15,7 @@ export default function SpotlightPage({ piecesData }) {
       <Spotlight
         image={randomArtPiece.imageSource}
         artist={randomArtPiece.artist}
+        slug={randomArtPiece.slug}
       />
     </div>
   );
