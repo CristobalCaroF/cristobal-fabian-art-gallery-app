@@ -12,9 +12,9 @@ export default function SpotlightPage({ piecesData }) {
 
   return (
     <div>
-      <header>
+      {/* <header>
         <h1>Art Gallery App!</h1>
-      </header>
+      </header> */}
       <Spotlight
         image={randomArtPiece.imageSource}
         artist={randomArtPiece.artist}

@@ -26,8 +26,11 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} piecesData={data} />
+      <header>
+        <h1>Art Gallery App!</h1>
+      </header>
       <Layout />
+      <Component {...pageProps} piecesData={data} />
     </>
   );
 }
