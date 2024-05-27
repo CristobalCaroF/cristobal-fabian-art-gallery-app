@@ -8,6 +8,7 @@ export default function Spotlight({
   slug,
   onToggleFavorite,
   artPiecesInfo,
+  isFavorite,
 }) {
   return (
     <div>
@@ -22,6 +23,7 @@ export default function Spotlight({
         slug={slug}
         artPiecesInfo={artPiecesInfo}
         onToggleFavorite={onToggleFavorite}
+        isFavorite={isFavorite}
       ></FavoriteButton>
       <Link href={`/art-pieces/${slug}`}>More details</Link>
     </div>

@@ -4,6 +4,7 @@ export default function SpotlightPage({
   piecesData,
   onToggleFavorite,
   artPiecesInfo,
+  isFavorite,
 }) {
   console.log("piecesData: ", piecesData);
   function getRandomArtPiece(piecesArray) {
@@ -22,6 +23,7 @@ export default function SpotlightPage({
         slug={randomArtPiece.slug}
         artPiecesInfo={artPiecesInfo}
         onToggleFavorite={onToggleFavorite}
+        isFavorite={isFavorite}
       />
     </div>
   );

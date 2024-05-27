@@ -4,6 +4,7 @@ export default function SpotlightPage({
   piecesData,
   onToggleFavorite,
   artPiecesInfo,
+  isFavorite,
 }) {
   return (
     <div>
@@ -11,6 +12,7 @@ export default function SpotlightPage({
         pieces={piecesData}
         onToggleFavorite={onToggleFavorite}
         artPiecesInfo={artPiecesInfo}
+        isFavorite={isFavorite}
       />
     </div>
   );

@@ -4,6 +4,7 @@ export default function ArtPieceDetailsPage({
   piecesData,
   onToggleFavorite,
   artPiecesInfo,
+  isFavorite,
 }) {
   return (
     <div>
@@ -11,6 +12,7 @@ export default function ArtPieceDetailsPage({
         pieces={piecesData}
         artPiecesInfo={artPiecesInfo}
         onToggleFavorite={onToggleFavorite}
+        isFavorite={isFavorite}
       />
     </div>
   );

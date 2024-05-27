@@ -6,6 +6,7 @@ export default function ArtPieceDetails({
   pieces,
   onToggleFavorite,
   artPiecesInfo,
+  isFavorite,
 }) {
   console.log("piecesData: ", pieces);
   const router = useRouter();
@@ -28,6 +29,7 @@ export default function ArtPieceDetails({
           slug={slug}
           artPiecesInfo={artPiecesInfo}
           onToggleFavorite={onToggleFavorite}
+          isFavorite={isFavorite}
         ></FavoriteButton>
       </div>
       <button type="button" onClick={() => router.back()}>

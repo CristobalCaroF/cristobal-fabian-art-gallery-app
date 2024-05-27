@@ -24,7 +24,6 @@ export default function App({ Component, pageProps }) {
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
-  // setArtPiecesInfo(data);
 
   function handleToggleFavorite(slug) {
     const info = artPiecesInfo.find((info) => info.slug === slug);
@@ -37,9 +36,9 @@ export default function App({ Component, pageProps }) {
       const newInfo = [...artPiecesInfo, { slug, isFavorite: true }];
       setArtPiecesInfo(newInfo);
     }
-    console.log("art info1: ", artPiecesInfo);
+    // console.log("art info1: ", artPiecesInfo);
   }
-
+  console.log("art info1: ", artPiecesInfo);
   return (
     <>
       <GlobalStyle />
