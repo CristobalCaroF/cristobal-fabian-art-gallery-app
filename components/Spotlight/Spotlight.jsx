@@ -1,7 +1,15 @@
 import React from "react";
 import Link from "next/link";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
-export default function Spotlight({ image, artist, slug }) {
+export default function Spotlight({
+  image,
+  artist,
+  slug,
+  onToggleFavorite,
+  artPiecesInfo,
+  isFavorite,
+}) {
   return (
     <div>
       <h2>Spotlight Piece of Art</h2>
@@ -11,6 +19,12 @@ export default function Spotlight({ image, artist, slug }) {
         style={{ width: 500 }}
       ></img>
       <h3>{artist}</h3>
+      <FavoriteButton
+        slug={slug}
+        artPiecesInfo={artPiecesInfo}
+        onToggleFavorite={onToggleFavorite}
+        isFavorite={isFavorite}
+      ></FavoriteButton>
       <Link href={`/art-pieces/${slug}`}>More details</Link>
     </div>
   );
