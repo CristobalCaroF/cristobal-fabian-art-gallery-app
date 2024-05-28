@@ -33,16 +33,43 @@ export default function App({ Component, pageProps }) {
       );
       setArtPiecesInfo(newInfo);
     } else {
-      const newInfo = [...artPiecesInfo, { slug, isFavorite: true }];
+      const newInfo = [
+        ...artPiecesInfo,
+        { slug, isFavorite: true, comments: [] },
+      ];
       setArtPiecesInfo(newInfo);
     }
   }
 
-  function handleAddComment(newComment) {
+  function handleAddComment(newComment, slug) {
+    const info = artPiecesInfo.find((info) => info.slug === slug);
     const date = new Date().toLocaleDateString("en-us", {
       dateStyle: "medium",
     });
-    setArtPiecesInfo([{ date, ...newComment }, ...artPiecesInfo]);
+    // const time = new Date().getTime();
+    // console.log(time);
+
+    if (info) {
+      const newInfo = artPiecesInfo.map((info) =>
+        info.slug === slug
+          ? {
+              ...info,
+              comments: [...info.comments, { date: date, comment: newComment }],
+            }
+          : info
+      );
+      setArtPiecesInfo(newInfo);
+    } else {
+      const newInfo = [
+        ...artPiecesInfo,
+        {
+          slug,
+          isFavorite: false,
+          comments: [{ date: date, comment: newComment }],
+        },
+      ];
+      setArtPiecesInfo(newInfo);
+    }
   }
   console.log("Pieces info: ", artPiecesInfo);
   return (

@@ -1,22 +1,21 @@
-export default function CommentForm({ onSubmitComment }) {
+export default function CommentForm({ onSubmitComment, slug }) {
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    onSubmitComment(data);
+    onSubmitComment(data, slug);
     event.target.reset();
   }
 
   return (
     <form className="entry-form" onSubmit={handleSubmit}>
-      <h3 className="entry-form__title">Add Comment</h3>
+      <h4 className="entry-form__title">Add Comment</h4>
       <div className="entry-form__fields">
         <div className="entry-form__field">
-          <label htmlFor="notes">Comment</label>
-          <textarea name="notes" id="notes" rows="4" />
+          <textarea name="message" id="message" rows="4" />
         </div>
         <div className="entry-form__button-wrapper">
-          <button type="submit">Create</button>
+          <button type="submit">Send</button>
         </div>
       </div>
     </form>
