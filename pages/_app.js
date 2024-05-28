@@ -36,9 +36,15 @@ export default function App({ Component, pageProps }) {
       const newInfo = [...artPiecesInfo, { slug, isFavorite: true }];
       setArtPiecesInfo(newInfo);
     }
-    // console.log("art info1: ", artPiecesInfo);
   }
-  console.log("art info1: ", artPiecesInfo);
+
+  function handleAddComment(newComment) {
+    const date = new Date().toLocaleDateString("en-us", {
+      dateStyle: "medium",
+    });
+    setArtPiecesInfo([{ date, ...newComment }, ...artPiecesInfo]);
+  }
+  console.log("Pieces info: ", artPiecesInfo);
   return (
     <>
       <GlobalStyle />
@@ -51,6 +57,7 @@ export default function App({ Component, pageProps }) {
         piecesData={data}
         onToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
+        onSubmitComment={handleAddComment}
       />
     </>
   );

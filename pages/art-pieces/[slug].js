@@ -1,10 +1,11 @@
 import ArtPieceDetails from "@/components/ArtPieceDetails/ArtPieceDetails";
+import CommentForm from "@/components/CommentForm/CommentForm";
 
 export default function ArtPieceDetailsPage({
   piecesData,
   onToggleFavorite,
   artPiecesInfo,
-  isFavorite,
+  onSubmitComment,
 }) {
   return (
     <div>
@@ -12,8 +13,9 @@ export default function ArtPieceDetailsPage({
         pieces={piecesData}
         artPiecesInfo={artPiecesInfo}
         onToggleFavorite={onToggleFavorite}
-        isFavorite={isFavorite}
+        onSubmitComment={onSubmitComment}
       />
+      <CommentForm onSubmitComment={onSubmitComment} />
     </div>
   );
 }
