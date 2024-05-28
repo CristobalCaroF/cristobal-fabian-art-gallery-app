@@ -6,12 +6,19 @@ export default function ArtPieceDetails({
   pieces,
   onToggleFavorite,
   artPiecesInfo,
-  isFavorite,
 }) {
   console.log("piecesData: ", pieces);
   const router = useRouter();
   const { slug } = router.query;
+
   const piece = pieces.find((piece) => piece.slug === slug);
+  const pieceIsFavorite = artPiecesInfo.find(
+    (artPieceInfo) => artPieceInfo.slug === piece.slug
+  );
+
+  const { isFavorite } = pieceIsFavorite
+    ? pieceIsFavorite
+    : { isFavorite: false };
 
   return (
     <>

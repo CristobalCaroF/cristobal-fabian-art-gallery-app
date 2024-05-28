@@ -8,11 +8,15 @@ export default function Spotlight({
   slug,
   onToggleFavorite,
   artPiecesInfo,
-  isFavorite,
 }) {
+  const hasInfo = artPiecesInfo.find(
+    (artPieceInfo) => artPieceInfo.slug === slug
+  );
+  const { isFavorite } = hasInfo ? hasInfo : { isFavorite: false };
   return (
     <div>
       <h2>Spotlight Piece of Art</h2>
+
       <img
         alt={"Spotlight Piece of Art"}
         src={image}
