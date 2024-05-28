@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import ArtPieces from "./ArtPieces";
+import { useState } from "react";
 
 const pieces = [
   {
@@ -31,7 +32,7 @@ const pieces = [
   },
 ];
 
-test("renders a list", () => {
+test("renders a list of art pieces", () => {
   render(<ArtPieces pieces={pieces} />);
   const ul = screen.getByRole("list");
   expect(ul).toBeInTheDocument();

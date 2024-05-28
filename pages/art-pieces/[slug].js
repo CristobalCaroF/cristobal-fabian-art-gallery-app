@@ -1,5 +1,4 @@
 import ArtPieceDetails from "@/components/ArtPieceDetails/ArtPieceDetails";
-import CommentForm from "@/components/CommentForm/CommentForm";
 
 export default function ArtPieceDetailsPage({
   piecesData,
@@ -15,7 +14,6 @@ export default function ArtPieceDetailsPage({
         onToggleFavorite={onToggleFavorite}
         onSubmitComment={onSubmitComment}
       />
-      <CommentForm onSubmitComment={onSubmitComment} />
     </div>
   );
 }
