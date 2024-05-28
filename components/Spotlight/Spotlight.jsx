@@ -17,11 +17,13 @@ export default function Spotlight({
     <div>
       <h2>Spotlight Piece of Art</h2>
 
-      <img
-        alt={"Spotlight Piece of Art"}
-        src={image}
-        style={{ width: 500 }}
-      ></img>
+      <Link href={`/art-pieces/${slug}`}>
+        <img
+          alt={"Spotlight Piece of Art"}
+          src={image}
+          style={{ width: 500 }}
+        ></img>
+      </Link>
       <h3>{artist}</h3>
       <FavoriteButton
         slug={slug}
@@ -29,7 +31,6 @@ export default function Spotlight({
         onToggleFavorite={onToggleFavorite}
         isFavorite={isFavorite}
       ></FavoriteButton>
-      <Link href={`/art-pieces/${slug}`}>More details</Link>
     </div>
   );
 }
