@@ -2,6 +2,23 @@ import React from "react";
 import Link from "next/link";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
+const containerStyle = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  height: "100vh",
+  backgroundColor: "#FFF8E3",
+};
+
+const imageStyle = {
+  width: "30%",
+  height: "auto",
+  borderRadius: "0 0 0 0",
+  objectFit: "cover",
+  border: "3px solid #000",
+};
+
 export default function Spotlight({
   image,
   artist,
@@ -14,14 +31,14 @@ export default function Spotlight({
   );
   const { isFavorite } = hasInfo ? hasInfo : { isFavorite: false };
   return (
-    <div>
+    <div style={containerStyle}>
       <h2>Spotlight Piece of Art</h2>
 
-      <Link href={`/art-pieces/${slug}`}>
+      <Link style={containerStyle} href={`/art-pieces/${slug}`}>
         <img
           alt={"Spotlight Piece of Art"}
           src={image}
-          style={{ width: 500 }}
+          style={imageStyle}
         ></img>
       </Link>
       <h3>{artist}</h3>

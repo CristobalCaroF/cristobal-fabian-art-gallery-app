@@ -75,7 +75,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <header>
+      <header style={{ textAlign: "center" }}>
         <h1>Art Gallery App!</h1>
       </header>
       <Layout />
